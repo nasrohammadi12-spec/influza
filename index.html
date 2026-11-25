@@ -28,7 +28,7 @@ footer{text-align:center;padding:28px;color:var(--muted)}.hidden{display:none!im
 <body><div class="app">
 <header class="top"><div class="brand"><span class="mark"></span><span>INFLUZA<small>Connect. Create. Earn.</small></span></div>
 <nav class="nav"><button data-page="home" class="active">الرئيسية</button><button data-page="projects">المشاريع</button><button data-page="services">الخدمات</button><button data-page="company">الشركات</button><button data-page="creator">صناع المحتوى</button></nav>
-<div class="btnrow" style="margin:0"><button class="secondary" data-page="login">تسجيل الدخول</button><button class="primary" data-page="signup">إنشاء حساب</button></div></header>
+<div class="btnrow" id="authNav" style="margin:0"><button class="secondary" data-page="login" id="loginNavBtn">تسجيل الدخول</button><button class="primary" data-page="signup" id="signupNavBtn">إنشاء حساب</button><button class="secondary hidden" data-page="creator" id="accountNavBtn">حسابي</button><button class="primary hidden" type="button" id="headerSignOutBtn">تسجيل الخروج</button></div></header>
 <main id="home" class="page">
 <div class="wrap"><section class="hero"><div><span class="tag">منصة تجمع المواهب بالفرص</span><h1><span>INFLUZA</span></h1><div class="lead">المنصة التي تربط الشركات بالمؤثرين وصناع المحتوى</div><p class="muted">اكتشف فرص التعاون، قدّم خدماتك، وابدأ ببناء علاقات مهنية جديدة في مكان واحد.</p><div class="btnrow"><button class="primary" data-page="signup">ابدأ الآن ←</button><button class="secondary" data-page="projects">اكتشف المشاريع</button></div></div><div class="hero-art"><span>👩🏻‍💻 🤝 👨🏻‍🎨</span><div class="bubble one">💜 فرص تعاون</div><div class="bubble two">💙 مواهب وإبداع</div></div></section>
 <div class="features"><div class="feature"><span class="ico">🤝</span>تعاون مع الشركات</div><div class="feature"><span class="ico">🚀</span>اكتشف فرصاً جديدة</div><div class="feature"><span class="ico">💎</span>اعرض مهاراتك وخدماتك</div></div>
@@ -67,8 +67,10 @@ document.getElementById('loginForm').addEventListener('submit',async e=>{
  catch(err){toast('تعذّر تسجيل الدخول: '+(err.message||'تحقق من البريد وكلمة المرور'));}
  finally{btn.disabled=false;btn.textContent='دخول';}
 });
-async function showUserHome(user){const role=user?.user_metadata?.role||'creator';if(role==='company')go('company');else if(role==='service')go('services');else go('creator');}
-async function restoreSession(){const {data}=await supabaseClient.auth.getSession();if(data.session){const user=data.session.user;const role=user?.user_metadata?.role;if(role==='company')go('company');else if(role==='service')go('services');else go('creator');}}
+function accountPage(user){const role=user?.user_metadata?.role||'creator';return role==='company'?'company':role==='service'?'services':'creator';}
+function updateAuthNav(user){const signedIn=!!user;document.getElementById('loginNavBtn').classList.toggle('hidden',signedIn);document.getElementById('signupNavBtn').classList.toggle('hidden',signedIn);document.getElementById('accountNavBtn').classList.toggle('hidden',!signedIn);document.getElementById('headerSignOutBtn').classList.toggle('hidden',!signedIn);if(signedIn)document.getElementById('accountNavBtn').dataset.page=accountPage(user);}
+async function showUserHome(user){updateAuthNav(user);go(accountPage(user));}
+async function restoreSession(){const {data}=await supabaseClient.auth.getSession();updateAuthNav(data.session?.user||null);if(data.session)go(accountPage(data.session.user));}
 
 let projects=JSON.parse(localStorage.getItem('influzaProjects')||'[]');
 document.getElementById('postForm').addEventListener('submit',e=>{e.preventDefault();projects.unshift({title:document.getElementById('projectTitle').value,category:document.getElementById('projectCategory').value,budget:document.getElementById('projectBudget').value,desc:document.getElementById('projectDesc').value,date:new Date().toLocaleDateString('ar')});localStorage.setItem('influzaProjects',JSON.stringify(projects));e.target.reset();toast('تمت إضافة المشروع إلى قائمة العرض على هذا الجهاز.');go('projects');});
@@ -76,5 +78,8 @@ function renderProjects(){const markup=projects.map((p,i)=>`<article class="item
 function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
 function apply(i){toast('تم تسجيل اهتمامك تجريبياً بالمشروع: '+projects[i].title);}
 document.querySelector('[data-role-choice="company"]').classList.add('selected');renderProjects();restoreSession();
-document.getElementById('signOutBtn').addEventListener('click',async()=>{const {error}=await supabaseClient.auth.signOut();if(error)toast(error.message);else{toast('تم تسجيل الخروج.');go('home');}});
+async function signOutUser(){const {error}=await supabaseClient.auth.signOut();if(error)toast(error.message);else{updateAuthNav(null);toast('تم تسجيل الخروج.');go('home');}}
+document.getElementById('signOutBtn').addEventListener('click',signOutUser);
+document.getElementById('headerSignOutBtn').addEventListener('click',signOutUser);
+supabaseClient.auth.onAuthStateChange((_event,session)=>updateAuthNav(session?.user||null));
 </script></body></html>
