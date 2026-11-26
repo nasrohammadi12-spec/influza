@@ -35,7 +35,14 @@ footer{text-align:center;padding:28px;color:var(--muted)}.hidden{display:none!im
 <div class="section-title"><h2>ابدأ حسب دورك</h2></div><div class="grid3"><div class="card"><span class="ico">🏢</span><h3>أنا شركة</h3><p class="muted">انشر مشروعاً وابحث عن المبدعين المناسبين.</p><button class="primary" data-page="signup" data-role="company">إنشاء حساب شركة</button></div><div class="card"><span class="ico">📱</span><h3>أنا صانع محتوى</h3><p class="muted">اكتشف الحملات وفرص التعاون مع العلامات التجارية.</p><button class="primary" data-page="signup" data-role="creator">إنشاء حساب مبدع</button></div><div class="card"><span class="ico">🎨</span><h3>أنا مقدم خدمات</h3><p class="muted">اعرض التصميم والمونتاج والكتابة وغيرها.</p><button class="primary" data-page="signup" data-role="service">عرض خدماتي</button></div></div></div></main>
 <section id="login" class="page hidden"><div class="wrap"><div class="formbox"><h2>تسجيل الدخول</h2><p class="muted">مرحباً بعودتك إلى INFLUZA.</p><form id="loginForm"><div class="field"><label>البريد الإلكتروني</label><input id="loginEmail" type="email" required placeholder="name@example.com"></div><div class="field"><label>كلمة المرور</label><input id="loginPassword" type="password" required minlength="6" placeholder="••••••••"></div><button class="primary full">دخول</button></form><p class="muted">ليس لديك حساب؟ <a href="#" data-page="signup">إنشاء حساب جديد</a></p></div></div></section>
 <section id="signup" class="page hidden"><div class="wrap"><div class="formbox"><h2>إنشاء حساب جديد</h2><p class="muted">اختر نوع الحساب واملأ معلوماتك.</p><div class="switches"><button type="button" data-role-choice="company">🏢 شركة</button><button type="button" data-role-choice="creator">📱 صانع محتوى</button><button type="button" data-role-choice="service">🎨 مقدم خدمات</button></div><form id="signupForm"><div class="field"><label>الاسم الكامل أو اسم الشركة</label><input id="signupName" required placeholder="اكتب الاسم هنا"></div><div class="field"><label>البريد الإلكتروني</label><input id="signupEmail" type="email" required placeholder="name@example.com"></div><div class="field"><label>كلمة المرور</label><input id="signupPassword" type="password" minlength="6" required placeholder="6 أحرف على الأقل"></div><button class="primary full">إنشاء حساب</button></form><p class="muted">لديك حساب؟ <a href="#" data-page="login">تسجيل الدخول</a></p></div></div></section>
-<section id="company" class="page hidden"><div class="wrap"><div class="panel"><aside class="side"><div class="brand"><span class="mark"></span>INFLUZA</div><nav><button class="active">▦ لوحة التحكم</button><button data-page="projects">▣ مشاريعي</button><button data-page="projects">♧ الطلبات الواردة</button><button data-page="services">✉ الرسائل</button><button data-page="profile">⚙ إعدادات الحساب</button></nav></aside><div class="mainpanel"><div class="welcome"><h2>مرحباً بك في لوحة الشركات 👋</h2><span class="muted">تابع مشاريعك واكتشف المواهب المناسبة لحملاتك.</span></div><div class="stats"><div class="stat">مشاريعي<strong>0</strong><small>مشاريع منشورة</small></div><div class="stat">الطلبات<strong>0</strong><small>طلبات جديدة</small></div><div class="stat">المكتملة<strong>0</strong><small>مشاريع مكتملة</small></div><div class="stat">المبدعون<strong>0</strong><small>تواصلت معهم</small></div></div><div class="section-title"><h2>إدارة المشاريع</h2><button class="primary" data-page="post">+ نشر مشروع جديد</button></div><div id="companyProjects" class="rowlist"><div class="card muted">لا توجد مشاريع بعد. ابدأ بنشر أول مشروع لك.</div></div></div></div></div></section>
+<section id="company" class="page hidden"><div class="wrap"><div class="panel"><aside class="side"><div class="brand"><span class="mark"></span>INFLUZA</div><nav><button class="active">▦ لوحة التحكم</button><button data-page="projects">▣ مشاريعي</button><button data-page="company">♧ الطلبات الواردة</button><button data-page="services">✉ الرسائل</button><button data-page="profile">⚙ إعدادات الحساب</button></nav></aside><div class="mainpanel"><div class="welcome"><h2>مرحباً بك في لوحة الشركات 👋</h2><span class="muted">تابع مشاريعك واكتشف المواهب المناسبة لحملاتك.</span></div><div class="stats"><div class="stat">مشاريعي<strong>0</strong><small>مشاريع منشورة</small></div><div class="stat">الطلبات<strong>0</strong><small>طلبات جديدة</small></div><div class="stat">المكتملة<strong>0</strong><small>مشاريع مكتملة</small></div><div class="stat">المبدعون<strong>0</strong><small>تواصلت معهم</small></div></div><div class="section-title"><h2>إدارة المشاريع</h2><button class="primary" data-page="post">+ نشر مشروع جديد</button></div><div id="companyProjects" class="rowlist"><div class="card muted">لا توجد مشاريع بعد. ابدأ بنشر أول مشروع لك.</div></div><div class="section-title"><h2>الطلبات الواردة</h2></div><div id="incomingApplications" class="rowlist"><div class="card muted">لا توجد طلبات واردة حالياً.</div></div></div></div></div></section>
+<div id="incomingApplications" class="rowlist">
+<div class="card muted">لا توجد طلبات واردة حالياً.</div>
+</div>
+<div class="section-title">.</div><div class="section-title"><h2>الطلبات الواردة</h2></div>
+<div id="incomingApplications" class="rowlist">
+<div class="card muted">لا توجد طلبات واردة حالياً.</div>
+</div></div></div></div></div></section>
 <section id="creator" class="page hidden"><div class="wrap"><div class="panel"><aside class="side"><div class="brand"><span class="mark"></span>INFLUZA</div><nav><button class="active">▦ لوحة التحكم</button><button data-page="projects">✦ فرص التعاون</button><button data-page="services">▣ خدماتي</button><button data-page="services">✉ الرسائل</button><button data-page="profile">⚙ الملف الشخصي</button></nav></aside><div class="mainpanel"><div class="welcome"><h2>مرحباً أيها المبدع ✨</h2><span class="muted">اكتشف مشاريع جديدة وقدّم عروضك للشركات.</span></div><div class="stats"><div class="stat">فرص متاحة<strong id="creatorCount">0</strong><small>مشاريع منشورة</small></div><div class="stat">طلبات أرسلتها<strong>0</strong><small>طلبات مشاركة</small></div><div class="stat">مشاريع مكتملة<strong>0</strong><small>أعمال منجزة</small></div><div class="stat">تقييمك<strong>—</strong><small>يظهر بعد التقييم</small></div></div><div class="section-title"><h2>أحدث فرص التعاون</h2><button class="secondary" data-page="projects">عرض الكل</button></div><div id="creatorProjects" class="rowlist"></div></div></div></div></section>
 <section id="profile" class="page hidden"><div class="wrap"><div class="formbox"><h2>الملف الشخصي</h2><p class="muted">راجع معلومات حسابك وحدّث اسمك.</p><form id="profileForm"><div class="field"><label>الاسم الكامل</label><input id="profileName" required placeholder="اسمك الكامل"></div><div class="field"><label>البريد الإلكتروني</label><input id="profileEmail" type="email" disabled></div><div class="field"><label>نوع الحساب</label><input id="profileRole" disabled></div><button class="primary full" type="submit">حفظ التعديلات</button></form></div></div></section>
 <section id="projects" class="page hidden"><div class="wrap"><div class="section-title"><div><h2>المشاريع والفرص</h2><p class="muted">تصفح المشاريع المنشورة وقدّم طلبك.</p></div><button class="primary" data-page="post">+ نشر مشروع</button></div><div id="projectList" class="rowlist"><div class="card muted">لا توجد مشاريع منشورة حالياً.</div></div></div></section>
@@ -49,7 +56,7 @@ const SUPABASE_URL='https://xlzkqlupztevtiedcztw.supabase.co';
 const SUPABASE_PUBLISHABLE_KEY='sb_publishable_iyFJnoPNtvbAu-h-Dg8Dsw_eGCyEbQ6';
 const supabaseClient=window.supabase.createClient(SUPABASE_URL,SUPABASE_PUBLISHABLE_KEY);
 const pages=[...document.querySelectorAll('.page')];let chosenRole='company';let currentUser=null;let projects=[];
-function go(id){if(id==='post'){if(!currentUser){toast('سجّل الدخول أولاً.');id='login';}else if((currentUser.user_metadata?.role||'creator')!=='company'){toast('نشر المشاريع متاح لحسابات الشركات فقط.');id='projects';}}pages.forEach(p=>p.classList.toggle('hidden',p.id!==id));document.querySelectorAll('[data-page]').forEach(b=>b.classList.toggle('active',b.dataset.page===id));window.scrollTo(0,0);if(id==='projects'||id==='creator'||id==='company')renderProjects();}
+function go(id){if(id==='post'){if(!currentUser){toast('سجّل الدخول أولاً.');id='login';}else if((currentUser.user_metadata?.role||'creator')!=='company'){toast('نشر المشاريع متاح لحسابات الشركات فقط.');id='projects';}}pages.forEach(p=>p.classList.toggle('hidden',p.id!==id));document.querySelectorAll('[data-page]').forEach(b=>b.classList.toggle('active',b.dataset.page===id));window.scrollTo(0,0);if(id==='projects'||id==='creator'||id==='company')renderProjects();if(id==='company')renderApplications();}
 document.addEventListener('click',e=>{const b=e.target.closest('[data-page]');if(b){e.preventDefault();if(b.dataset.role)chosenRole=b.dataset.role;go(b.dataset.page)}const r=e.target.closest('[data-role-choice]');if(r){chosenRole=r.dataset.roleChoice;document.querySelectorAll('[data-role-choice]').forEach(x=>x.classList.toggle('selected',x===r));}});
 function toast(s){const t=document.getElementById('toast');t.textContent=s;t.classList.remove('hidden');setTimeout(()=>t.classList.add('hidden'),3000)}
 document.getElementById('signupForm').addEventListener('submit',async e=>{
@@ -76,10 +83,78 @@ async function showUserHome(user){currentUser=user;updateAuthNav(user);fillProfi
 async function restoreSession(){const {data}=await supabaseClient.auth.getSession();currentUser=data.session?.user||null;updateAuthNav(currentUser);if(currentUser){fillProfile(currentUser);go(accountPage(currentUser));}await renderProjects();}
 
 async function renderProjects(){const targets=['projectList','companyProjects','creatorProjects'];targets.forEach(id=>{const el=document.getElementById(id);if(el)el.innerHTML='<div class="card muted">جارٍ تحميل المشاريع...</div>';});try{const {data,error}=await supabaseClient.from('projects').select('id,title,description,category,budget,status,created_at,company_id').order('created_at',{ascending:false});if(error)throw error;projects=data||[];const markup=projects.map((p)=>`<article class="item"><div><b>${escapeHtml(p.title)}</b><span class="muted">${escapeHtml(p.category||'عام')} · ${p.budget>0?escapeHtml(String(p.budget))+' دولار':'الميزانية حسب الاتفاق'} · ${new Date(p.created_at).toLocaleDateString('ar')}</span><p class="muted">${escapeHtml(p.description||'')}</p></div><div><span class="pill blue">${p.status==='open'?'مفتوح':escapeHtml(p.status||'مفتوح')}</span><br><button class="secondary" style="margin-top:9px" onclick="applyProject('${p.id}')">تقديم طلب</button></div></article>`).join('')||'<div class="card muted">لا توجد مشاريع منشورة حالياً. كن أول من ينشر مشروعاً!</div>';targets.forEach(id=>{const el=document.getElementById(id);if(el)el.innerHTML=markup;});document.getElementById('creatorCount').textContent=projects.length;}catch(err){targets.forEach(id=>{const el=document.getElementById(id);if(el)el.innerHTML='<div class="card muted">تعذّر تحميل المشاريع. حاول تحديث الصفحة.</div>';});toast('تعذّر تحميل المشاريع: '+(err.message||'خطأ في الاتصال'));}}
+async function renderApplications(){
+ const box=document.getElementById('incomingApplications');
+ if(!box||!currentUser)return;
+ box.innerHTML='<div class="card muted">جارٍ تحميل الطلبات...</div>';
+ try{
+  const {data,error}=await supabaseClient
+   .from('applications')
+   .select('id,project_id,creator_id,message,status,created_at,projects!inner(title,company_id)')
+   .eq('projects.company_id',currentUser.id)
+   .order('created_at',{ascending:false});
+  if(error)throw error;
+  if(!data||!data.length){
+   box.innerHTML='<div class="card muted">لا توجد طلبات واردة حالياً.</div>';
+   return;
+  }
+  box.innerHTML=data.map(a=>`
+   <article class="item">
+    <div>
+     <b>${escapeHtml(a.projects.title)}</b>
+     <p>${escapeHtml(a.message||'')}</p>
+     <span class="pill blue">${escapeHtml(a.status)}</span>
+    </div>
+    <div>
+     ${a.status==='pending'?`
+      <button class="primary" onclick="updateApplication('${a.id}','accepted')">قبول</button>
+      <button class="secondary" onclick="updateApplication('${a.id}','rejected')">رفض</button>
+     `:''}
+    </div>
+   </article>
+  `).join('');
+ }catch(err){
+  box.innerHTML='<div class="card muted">تعذّر تحميل الطلبات.</div>';
+  toast('خطأ: '+(err.message||''));
+ }
+}
 
+async function updateApplication(id,status){
+ try{
+  const {error}=await supabaseClient.from('applications')
+   .update({status}).eq('id',id);
+  if(error)throw error;
+  toast(status==='accepted'?'تم قبول الطلب!':'تم رفض الطلب.');
+  renderApplications();
+ }catch(err){
+  toast('تعذّر تحديث الطلب: '+err.message);
+ }
+}
 document.getElementById('postForm').addEventListener('submit',async e=>{e.preventDefault();if(!currentUser){toast('سجّل الدخول أولاً.');go('login');return;}if((currentUser.user_metadata?.role||'creator')!=='company'){toast('نشر المشاريع متاح لحسابات الشركات فقط.');return;}const title=document.getElementById('projectTitle').value.trim();const category=document.getElementById('projectCategory').value;const budgetText=document.getElementById('projectBudget').value.trim();const description=document.getElementById('projectDesc').value.trim();const budget=budgetText?Number(budgetText.replace(',','.').replace(/[^0-9.]/g,'')):0;if(budgetText&&(!Number.isFinite(budget)||budget<0)){toast('اكتب الميزانية كرقم فقط، مثلاً 100.');return;}const btn=e.target.querySelector('button[type=submit]');btn.disabled=true;btn.textContent='جارٍ نشر المشروع...';try{const {error}=await supabaseClient.from('projects').insert({company_id:currentUser.id,title,category,budget,description,status:'open'});if(error)throw error;e.target.reset();toast('تم نشر المشروع بنجاح وأصبح متاحاً للمبدعين!');await renderProjects();go('projects');}catch(err){toast('تعذّر نشر المشروع: '+(err.message||'تحقق من الاتصال والصلاحيات'));}finally{btn.disabled=false;btn.textContent='نشر المشروع';}});
 function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
-function applyProject(id){toast('عرض المشروع جاهز. ربط إرسال طلبات المشاركة سيكون في الخطوة التالية.');}
+async function applyProject(id){
+ if(!currentUser){toast('سجّل الدخول أولاً.');go('login');return;}
+ if(currentUser.user_metadata?.role!=='creator'){
+  toast('التقديم متاح لحسابات صناع المحتوى فقط.');return;
+ }
+ const project=projects.find(p=>p.id===id);
+ if(!project||project.status!=='open'){toast('هذا المشروع غير متاح حالياً.');return;}
+ const message=prompt('اكتب رسالة قصيرة للشركة توضح فيها رغبتك في التعاون:');
+ if(!message||!message.trim())return;
+ try{
+  const {data:existing,error:checkError}=await supabaseClient.from('applications').select('id').eq('project_id',id).eq('creator_id',currentUser.id).maybeSingle();
+  if(checkError)throw checkError;
+  if(existing){toast('سبق لك تقديم طلب لهذا المشروع.');return;}
+  const {error}=await supabaseClient.from('applications').insert({
+   project_id:id,
+   creator_id:currentUser.id,
+   message:message.trim(),
+   status:'pending'
+  });
+  if(error)throw error;
+  toast('تم إرسال طلبك بنجاح! 💜');
+ }catch(err){toast('تعذّر إرسال الطلب: '+(err.message||'حدث خطأ'));}
+}
 document.querySelector('[data-role-choice="company"]').classList.add('selected');renderProjects();restoreSession();
 async function signOutUser(){const {error}=await supabaseClient.auth.signOut();if(error)toast(error.message);else{currentUser=null;updateAuthNav(null);toast('تم تسجيل الخروج.');go('home');}}
 document.getElementById('signOutBtn').addEventListener('click',signOutUser);
